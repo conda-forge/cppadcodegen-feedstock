@@ -2,12 +2,9 @@
 
 mkdir build && cd build
 
-cmake -DCMAKE_INSTALL_PREFIX=$PREFIX \
-      -DCMAKE_PREFIX_PATH=$PREFIX \
+cmake ${CMAKE_ARGS} $SRC_DIR \
       -DCMAKE_BUILD_TYPE=Release \
-      -DCMAKE_INSTALL_LIBDIR=lib \
       -DGOOGLETEST_GIT=ON \
-      $SRC_DIR
 
 make -j${CPU_COUNT}
 make install
