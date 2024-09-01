@@ -1,5 +1,5 @@
 {% set name = "cppadcodegen" %}
-{% set version = "2.4.3" %}
+{% set version = "2.5.0" %}
 
 package:
   name: {{ name }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/joaoleal/CppADCodeGen/archive/v{{ version }}.tar.gz
-  sha256: 3d3fee920f67b70566fa09ba62203323d4a8100d1ab210c6e7b34f7cb23349fb
+  sha256: 2a08c900d2f9df6d2fbdced6d3f67c6227cf5871ee3cf666d199e912c26c3a58
 
 build:
-  number: 3
+  number: 0
   # No ABI policy documented, let's be conservative 
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
@@ -34,11 +34,11 @@ test:
 
 about:
   home: https://github.com/joaoleal/CppADCodeGen
-  license: GPL-3.0-only OR EPL-2.0 
-  license_file: 
+  license: GPL-3.0-only OR EPL-2.0
+  license_file:
     - gpl3.txt
     - epl-v10.txt
-  summary: CppADCodeGen - Source Code Generation for Automatic Differentiation using Operator Overloading 
+  summary: CppADCodeGen - Source Code Generation for Automatic Differentiation using Operator Overloading
 
   dev_url: https://github.com/joaoleal/CppADCodeGen
 
