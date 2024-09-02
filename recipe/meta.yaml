@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/joaoleal/CppADCodeGen/archive/v{{ version }}.tar.gz
-  sha256: 2a08c900d2f9df6d2fbdced6d3f67c6227cf5871ee3cf666d199e912c26c3a58
+  sha256: a53d3e91cfa17381f31819d549de71767b90d05e671fa848043694b0f53d6c18
 
 build:
-  number: 0
+  number: 1
   # No ABI policy documented, let's be conservative 
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
