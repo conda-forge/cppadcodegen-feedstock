@@ -1,7 +1,7 @@
 mkdir build
 cd build
 
-cmake %CMAKE_ARGS ^
+cmake %CMAKE_ARGS% ^
     %SRC_DIR% ^
     -G "Ninja"
 if errorlevel 1 exit 1
