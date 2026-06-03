@@ -8,9 +8,14 @@ package:
 source:
   url: https://github.com/joaoleal/CppADCodeGen/archive/v{{ version }}.tar.gz
   sha256: a53d3e91cfa17381f31819d549de71767b90d05e671fa848043694b0f53d6c18
+  patches:
+    - patches/0001-Fix-static-thread_local-issue-with-GCC-93.patch
+    - patches/0002-CMake-look-for-system-gtest-90.patch
+    - patches/0003-Add-Eigen5-support-to-FindEigen3.cmake.patch
+    - patches/0004-Add-new-mandatory-methods-to-Eigen-NumTraits-special.patch
 
 build:
-  number: 1
+  number: 2
   # No ABI policy documented, let's be conservative 
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
@@ -21,9 +26,10 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
     - cmake
-    - make  # [linux]
+    - ninja
   host:
     - cppad
+    - gtest # To avoid fetch content download
 
 test:
   commands:

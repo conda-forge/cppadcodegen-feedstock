@@ -2,9 +2,8 @@
 
 mkdir build && cd build
 
-cmake ${CMAKE_ARGS} $SRC_DIR \
-      -DCMAKE_BUILD_TYPE=Release \
-      -DGOOGLETEST_GIT=ON \
+cmake ${CMAKE_ARGS} \
+      $SRC_DIR \
+      -GNinja
 
-make -j${CPU_COUNT}
-make install
+ninja install
