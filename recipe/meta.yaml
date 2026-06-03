@@ -15,7 +15,7 @@ source:
     - patches/0004-Add-new-mandatory-methods-to-Eigen-NumTraits-special.patch
 
 build:
-  number: 2
+  number: 3
   # No ABI policy documented, let's be conservative 
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
@@ -27,9 +27,9 @@ requirements:
     - {{ stdlib("c") }}
     - cmake
     - ninja
+    - gtest # To avoid fetch content download
   host:
     - cppad
-    - gtest # To avoid fetch content download
 
 test:
   commands:
