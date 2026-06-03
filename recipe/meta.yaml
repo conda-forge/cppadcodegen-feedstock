@@ -19,6 +19,8 @@ build:
   # No ABI policy documented, let's be conservative 
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
+  ignore_run_exports_from:
+    - gtest
 
 requirements:
   build:
@@ -27,9 +29,9 @@ requirements:
     - {{ stdlib("c") }}
     - cmake
     - ninja
-    - gtest # To avoid fetch content download
   host:
     - cppad
+    - gtest # To avoid fetch content download
 
 test:
   commands:
